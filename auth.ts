@@ -3,9 +3,9 @@ import NextAuth from "next-auth";
 import type { NextAuthConfig } from "next-auth";
 
 import Credentials from "@auth/core/providers/credentials";
-import { validateJWT } from "./lib/authHelpers";
 
 import prisma from "./lib/prisma";
+import { importSPKI, jwtVerify } from "jose";
 
 type User = {
   id: string;
@@ -32,20 +32,26 @@ export const config = {
         if (typeof token !== "string" || !token) {
           throw new Error("Token is required");
         }
-        const jwtPayload = await validateJWT(token);
-        if (jwtPayload && jwtPayload.sub) {
+        const tokenValidate = token.replace("Bearer ", "");
+        const key = await importSPKI(
+          process.env.NEXT_PUBLIC_DYNAMIC_PUBLIC_KEY!.replace(/\\n/g, "\n"),
+          "RS256"
+        );
+        const {payload} = await jwtVerify(tokenValidate, key);
+  
+        if (payload && payload.sub && payload.alias && payload.email) {
           const u = await prisma.user.upsert({
             where: {
-              id: jwtPayload.sub,
+              id: payload.sub,
             },
             update: {
-              email: jwtPayload.id,
-              name: jwtPayload.alias,
+              email: payload.email,
+              name: payload.alias,
             },
             create: {
-              id: jwtPayload.sub,
-              email: jwtPayload.email,
-              name: jwtPayload.alias,
+              id: payload.sub,
+              email: payload.email as string,
+              name: payload.alias as string
             },
           });
           // Transform the JWT payload into your user object

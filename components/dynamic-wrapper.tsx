@@ -5,10 +5,25 @@ import { signOut } from "next-auth/react";
 
 import { DynamicContextProvider } from "../lib/dynamic";
 import { EthereumWalletConnectors } from "../lib/dynamic";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
+import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
+import { createConfig, WagmiProvider } from "wagmi";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { http } from "viem";
+import { sepolia } from "viem/chains";
+
+const config = createConfig({
+  chains: [sepolia],
+  multiInjectedProviderDiscovery: false,
+  transports: {
+    [sepolia.id]: http(),
+  },
+});
+
+const queryClient = new QueryClient();
 
 export default function ProviderWrapper({ children }: React.PropsWithChildren) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <DynamicContextProvider
       settings={{
@@ -35,7 +50,7 @@ export default function ProviderWrapper({ children }: React.PropsWithChildren) {
                 if (res.ok) {
                   console.log("auth success from nextAuth", res);
                   // Handle success - maybe redirect to the home page or user dashboard
-                  router.push("/dashboard")
+                  router.push("/dashboard");
                 } else {
                   // Handle any errors - maybe show an error message to the user
                   console.log(res);
@@ -53,7 +68,7 @@ export default function ProviderWrapper({ children }: React.PropsWithChildren) {
                 if (res) {
                   console.log("auth success from nextAuth", res);
                   // Handle success - maybe redirect to the home page or user dashboard
-                  router.push("/")
+                  router.push("/");
                 } else {
                   // Handle any errors - maybe show an error message to the user
                   console.log(res);
@@ -65,7 +80,11 @@ export default function ProviderWrapper({ children }: React.PropsWithChildren) {
         },
       }}
     >
-      {children}
+      <WagmiProvider config={config}>
+        <QueryClientProvider client={queryClient}>
+          <DynamicWagmiConnector>{children}</DynamicWagmiConnector>
+        </QueryClientProvider>
+      </WagmiProvider>
     </DynamicContextProvider>
   );
 }
