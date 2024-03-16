@@ -10,7 +10,6 @@ import Link from "next/link";
 const UpdateForm = () => {
   const { user } = useDynamicContext();
   const { data: session, update } = useSession();
-  console.log(session);
 
   useEffect(() => {
     console.log(user);
