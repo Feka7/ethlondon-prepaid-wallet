@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dynamic-shadow-dom {
+  --dynamic-connect-button-background: #951515;
+  --dynamic-connect-button-color: #fff;
+  --dynamic-connect-button-background-hover: #fb2323;
+  --dynamic-connect-button-color-hover: #fff;
+}
+

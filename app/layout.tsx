@@ -8,9 +8,9 @@ import ProviderWrapper from "../components/dynamic-wrapper";
 const inter = Sulphur_Point({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NextAuth.js Example",
+  title: "Flowise",
   description:
-    "This is an example site to demonstrate how to use NextAuth.js for authentication",
+    "Crypto Made Simple",
 };
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
@@ -18,11 +18,8 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     <html lang="en">
       <ProviderWrapper>
         <body className={inter.className}>
-          <div className="flex flex-col justify-between w-full h-full min-h-screen">
-            <main className="flex-auto w-full max-w-3xl px-4 py-4 mx-auto sm:px-6 md:py-6">
+          <div className="w-full min-h-screen">
               {children}
-            </main>
-            
           </div>
         </body>
       </ProviderWrapper>
