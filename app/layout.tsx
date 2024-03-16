@@ -2,10 +2,10 @@
 
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sulphur_Point } from "next/font/google";
 import ProviderWrapper from "../components/dynamic-wrapper";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Sulphur_Point({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NextAuth.js Example",

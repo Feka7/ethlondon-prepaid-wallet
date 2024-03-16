@@ -5,6 +5,8 @@ import type { NextAuthConfig } from "next-auth";
 import Credentials from "@auth/core/providers/credentials";
 import { validateJWT } from "./lib/authHelpers";
 
+import prisma from "./lib/prisma";
+
 type User = {
   id: string;
   name: string;
@@ -31,12 +33,26 @@ export const config = {
           throw new Error("Token is required");
         }
         const jwtPayload = await validateJWT(token);
-        if (jwtPayload) {
+        if (jwtPayload && jwtPayload.sub) {
+          const u = await prisma.user.upsert({
+            where: {
+              id: jwtPayload.sub,
+            },
+            update: {
+              email: jwtPayload.id,
+              name: jwtPayload.alias,
+            },
+            create: {
+              id: jwtPayload.sub,
+              email: jwtPayload.email,
+              name: jwtPayload.alias,
+            },
+          });
           // Transform the JWT payload into your user object
           const user: User = {
-            id: jwtPayload.sub || "", // Assuming 'sub' is the user ID
-            name: jwtPayload.name || "", // Replace with actual field from JWT payload
-            email: jwtPayload.email || "", // Replace with actual field from JWT payload
+            id: u.id, // Assuming 'sub' is the user ID
+            name: u.name || "", // Replace with actual field from JWT payload
+            email: u.email || "", // Replace with actual field from JWT payload
             // Map other fields as needed
           };
           return user;
@@ -51,11 +67,7 @@ export const config = {
       const { pathname } = request.nextUrl;
       if (pathname === "/middleware-example") return !!auth;
       return true;
-    },
-    jwt({ token, trigger, session }) {
-      if (trigger === "update") token.name = session.user.name
-      return token
-    },
+    }
   },
 } satisfies NextAuthConfig;
 
