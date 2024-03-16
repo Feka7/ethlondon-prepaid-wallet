@@ -1,21 +1,31 @@
 "use server";
-import { Resend } from 'resend';
-import { z } from "zod";
 
-const resend = new Resend('re_aZEnGGFr_EEK2EbXstDMRRubfmrqnUqJ3');
+import { v4 as uuidv4 } from "uuid";
 
-const schema = z.object({
-    email: z.string(),
-    number: z.string()
-  });
-export async function createPrepaidWallet(formData: FormData) {
-    const formDataObj = Object.fromEntries(formData.entries());
-    const validatedData = schema.parse(formDataObj);
+const url = "https://api.circle.com/v1/w3s/developer/wallets";
 
-    await resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: "feka7@hotmail.it",
-        subject: 'Flowise prepaid wallet',
-        html: '<p>You have received a prepaid wallet with <strong>'+validatedData.number+' USDC</strong>!</p>'
-      });
+export async function createPrepaidWallet() {
+  const entitySecretCiphertext = generateEntitySecret(
+    process.env.CIRCLE_API_KEY as string,
+    process.env.CIRCLE_ENTITY_SECRET as string
+  );
+  const options = {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+      authorization: "Bearer " + process.env.CIRCLE_API_KEY,
+    },
+    body: JSON.stringify({
+      accountType: "SCA",
+      idempotencyKey: uuidv4(),
+      blockchains: ["MATIC-MUMBAI"],
+      count: 1,
+      entitySecretCiphertext: entitySecretCiphertext,
+      walletSetId: process.env.CIRCLE_WALLETSETID,
+    }),
+  };
+
+  const result = await (await fetch(url, options)).json()
+
 }

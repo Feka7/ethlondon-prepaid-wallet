@@ -1,23 +1,68 @@
 "use client";
 
-import { useRef, useState } from "react";
-import ButtonSubmit from "./ButtonSubmit";
+import { tokenMessanger } from "@/abis/TokenMessanger";
+import { useWriteTokenMessangerDepositForBurn, useWriteUsdcApprove } from "@/abis/generated";
 import { createPrepaidWallet } from "@/actions/createPrepaidWallet";
-import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
+import { publicClient } from "@/lib/publicClient";
+import { useRef, useState } from "react";
+import { decodeAbiParameters, encodeAbiParameters, keccak256 } from "viem";
 import { useAccount } from "wagmi";
+import ButtonSubmit from "./ButtonSubmit";
 
 export default function ModalCreatePrepaid() {
   const ref = useRef<HTMLDialogElement>(null);
   const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-  const { primaryWallet } = useDynamicContext()
-  const { address, isConnected, chain } = useAccount();
+  const [number, setNumber] = useState(0);
+  const { address } = useAccount();
+  const writeUsdcApprove = useWriteUsdcApprove()
+  const depositForBurn = useWriteTokenMessangerDepositForBurn()
 
   const submit =async (form: FormData) => {
-    if (!primaryWallet) return null;
-    const signer = await primaryWallet.connector.getSigner();
+    if (!address) return null;
+    const amount = number * 10 ** 6;
+    await writeUsdcApprove.writeContractAsync({
+      args: [
+        "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
+        BigInt(amount)
+      ]
+    })
+
+    await depositForBurn.writeContractAsync({
+      args: [
+        BigInt(amount),
+        7,
+        encodeAbiParameters([
+          { type: 'address' }
+        ], [address]),
+        '0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238',
+      ]
+    })
+
+    const logs = await publicClient.getContractEvents({
+      address: '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5',
+      abi: tokenMessanger,
+      eventName: 'DepositForBurn',
+      args: {
+        depositor: address
+      }
+    })
+
+    logs[0].data
+
+   const messageBytes = decodeAbiParameters(
+    [
+      { type: 'bytes'},
+    ],
+    logs[0].data
+    )
     
+    const messageHash = keccak256(messageBytes[0]);
+    let copyMessageBytes = messageBytes[0];
+    form.append("messageBytes", copyMessageBytes)
+    form.append("messageHash", messageHash)
+
     await createPrepaidWallet(form)
+
   };
 
   return (
@@ -48,7 +93,7 @@ export default function ModalCreatePrepaid() {
                 id="number"
                 name="number"
                 value={number}
-                onChange={(e) => setNumber(e.target.value)}
+                onChange={(e) => setNumber(parseInt(e.target.value))}
                 required
                 className="input input-bordered"
               />

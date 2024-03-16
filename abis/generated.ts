@@ -486,6 +486,14 @@ export const messageTransmitterAbi = [
   },
 ] as const
 
+export const messageTransmitterAddress =
+  '0xe09A679F56207EF33F5b9d8fb4499Ec00792eA73' as const
+
+export const messageTransmitterConfig = {
+  address: messageTransmitterAddress,
+  abi: messageTransmitterAbi,
+} as const
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // tokenMessanger
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -868,6 +876,14 @@ export const tokenMessangerAbi = [
     stateMutability: 'nonpayable',
   },
 ] as const
+
+export const tokenMessangerAddress =
+  '0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5' as const
+
+export const tokenMessangerConfig = {
+  address: tokenMessangerAddress,
+  abi: tokenMessangerAbi,
+} as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // usdc
@@ -1559,6 +1575,10 @@ export const usdcAbi = [
   },
 ] as const
 
+export const usdcAddress = '0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238' as const
+
+export const usdcConfig = { address: usdcAddress, abi: usdcAbi } as const
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // React
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1593,6 +1613,7 @@ export const useReadMessageBytes32ToAddress =
  */
 export const useReadMessageTransmitter = /*#__PURE__*/ createUseReadContract({
   abi: messageTransmitterAbi,
+  address: messageTransmitterAddress,
 })
 
 /**
@@ -1601,6 +1622,7 @@ export const useReadMessageTransmitter = /*#__PURE__*/ createUseReadContract({
 export const useReadMessageTransmitterAttesterManager =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'attesterManager',
   })
 
@@ -1610,6 +1632,7 @@ export const useReadMessageTransmitterAttesterManager =
 export const useReadMessageTransmitterGetEnabledAttester =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'getEnabledAttester',
   })
 
@@ -1619,6 +1642,7 @@ export const useReadMessageTransmitterGetEnabledAttester =
 export const useReadMessageTransmitterGetNumEnabledAttesters =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'getNumEnabledAttesters',
   })
 
@@ -1628,6 +1652,7 @@ export const useReadMessageTransmitterGetNumEnabledAttesters =
 export const useReadMessageTransmitterIsEnabledAttester =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'isEnabledAttester',
   })
 
@@ -1637,6 +1662,7 @@ export const useReadMessageTransmitterIsEnabledAttester =
 export const useReadMessageTransmitterLocalDomain =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'localDomain',
   })
 
@@ -1646,6 +1672,7 @@ export const useReadMessageTransmitterLocalDomain =
 export const useReadMessageTransmitterMaxMessageBodySize =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'maxMessageBodySize',
   })
 
@@ -1655,6 +1682,7 @@ export const useReadMessageTransmitterMaxMessageBodySize =
 export const useReadMessageTransmitterNextAvailableNonce =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'nextAvailableNonce',
   })
 
@@ -1664,6 +1692,7 @@ export const useReadMessageTransmitterNextAvailableNonce =
 export const useReadMessageTransmitterOwner =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'owner',
   })
 
@@ -1673,6 +1702,7 @@ export const useReadMessageTransmitterOwner =
 export const useReadMessageTransmitterPaused =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'paused',
   })
 
@@ -1682,6 +1712,7 @@ export const useReadMessageTransmitterPaused =
 export const useReadMessageTransmitterPauser =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'pauser',
   })
 
@@ -1691,6 +1722,7 @@ export const useReadMessageTransmitterPauser =
 export const useReadMessageTransmitterPendingOwner =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'pendingOwner',
   })
 
@@ -1700,6 +1732,7 @@ export const useReadMessageTransmitterPendingOwner =
 export const useReadMessageTransmitterRescuer =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'rescuer',
   })
 
@@ -1709,6 +1742,7 @@ export const useReadMessageTransmitterRescuer =
 export const useReadMessageTransmitterSignatureThreshold =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'signatureThreshold',
   })
 
@@ -1718,6 +1752,7 @@ export const useReadMessageTransmitterSignatureThreshold =
 export const useReadMessageTransmitterUsedNonces =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'usedNonces',
   })
 
@@ -1727,6 +1762,7 @@ export const useReadMessageTransmitterUsedNonces =
 export const useReadMessageTransmitterVersion =
   /*#__PURE__*/ createUseReadContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'version',
   })
 
@@ -1735,6 +1771,7 @@ export const useReadMessageTransmitterVersion =
  */
 export const useWriteMessageTransmitter = /*#__PURE__*/ createUseWriteContract({
   abi: messageTransmitterAbi,
+  address: messageTransmitterAddress,
 })
 
 /**
@@ -1743,6 +1780,7 @@ export const useWriteMessageTransmitter = /*#__PURE__*/ createUseWriteContract({
 export const useWriteMessageTransmitterAcceptOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'acceptOwnership',
   })
 
@@ -1752,6 +1790,7 @@ export const useWriteMessageTransmitterAcceptOwnership =
 export const useWriteMessageTransmitterDisableAttester =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'disableAttester',
   })
 
@@ -1761,6 +1800,7 @@ export const useWriteMessageTransmitterDisableAttester =
 export const useWriteMessageTransmitterEnableAttester =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'enableAttester',
   })
 
@@ -1770,6 +1810,7 @@ export const useWriteMessageTransmitterEnableAttester =
 export const useWriteMessageTransmitterPause =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'pause',
   })
 
@@ -1779,6 +1820,7 @@ export const useWriteMessageTransmitterPause =
 export const useWriteMessageTransmitterReceiveMessage =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'receiveMessage',
   })
 
@@ -1788,6 +1830,7 @@ export const useWriteMessageTransmitterReceiveMessage =
 export const useWriteMessageTransmitterReplaceMessage =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'replaceMessage',
   })
 
@@ -1797,6 +1840,7 @@ export const useWriteMessageTransmitterReplaceMessage =
 export const useWriteMessageTransmitterRescueErc20 =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'rescueERC20',
   })
 
@@ -1806,6 +1850,7 @@ export const useWriteMessageTransmitterRescueErc20 =
 export const useWriteMessageTransmitterSendMessage =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'sendMessage',
   })
 
@@ -1815,6 +1860,7 @@ export const useWriteMessageTransmitterSendMessage =
 export const useWriteMessageTransmitterSendMessageWithCaller =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'sendMessageWithCaller',
   })
 
@@ -1824,6 +1870,7 @@ export const useWriteMessageTransmitterSendMessageWithCaller =
 export const useWriteMessageTransmitterSetMaxMessageBodySize =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'setMaxMessageBodySize',
   })
 
@@ -1833,6 +1880,7 @@ export const useWriteMessageTransmitterSetMaxMessageBodySize =
 export const useWriteMessageTransmitterSetSignatureThreshold =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'setSignatureThreshold',
   })
 
@@ -1842,6 +1890,7 @@ export const useWriteMessageTransmitterSetSignatureThreshold =
 export const useWriteMessageTransmitterTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'transferOwnership',
   })
 
@@ -1851,6 +1900,7 @@ export const useWriteMessageTransmitterTransferOwnership =
 export const useWriteMessageTransmitterUnpause =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'unpause',
   })
 
@@ -1860,6 +1910,7 @@ export const useWriteMessageTransmitterUnpause =
 export const useWriteMessageTransmitterUpdateAttesterManager =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'updateAttesterManager',
   })
 
@@ -1869,6 +1920,7 @@ export const useWriteMessageTransmitterUpdateAttesterManager =
 export const useWriteMessageTransmitterUpdatePauser =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'updatePauser',
   })
 
@@ -1878,6 +1930,7 @@ export const useWriteMessageTransmitterUpdatePauser =
 export const useWriteMessageTransmitterUpdateRescuer =
   /*#__PURE__*/ createUseWriteContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'updateRescuer',
   })
 
@@ -1885,7 +1938,10 @@ export const useWriteMessageTransmitterUpdateRescuer =
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link messageTransmitterAbi}__
  */
 export const useSimulateMessageTransmitter =
-  /*#__PURE__*/ createUseSimulateContract({ abi: messageTransmitterAbi })
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link messageTransmitterAbi}__ and `functionName` set to `"acceptOwnership"`
@@ -1893,6 +1949,7 @@ export const useSimulateMessageTransmitter =
 export const useSimulateMessageTransmitterAcceptOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'acceptOwnership',
   })
 
@@ -1902,6 +1959,7 @@ export const useSimulateMessageTransmitterAcceptOwnership =
 export const useSimulateMessageTransmitterDisableAttester =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'disableAttester',
   })
 
@@ -1911,6 +1969,7 @@ export const useSimulateMessageTransmitterDisableAttester =
 export const useSimulateMessageTransmitterEnableAttester =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'enableAttester',
   })
 
@@ -1920,6 +1979,7 @@ export const useSimulateMessageTransmitterEnableAttester =
 export const useSimulateMessageTransmitterPause =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'pause',
   })
 
@@ -1929,6 +1989,7 @@ export const useSimulateMessageTransmitterPause =
 export const useSimulateMessageTransmitterReceiveMessage =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'receiveMessage',
   })
 
@@ -1938,6 +1999,7 @@ export const useSimulateMessageTransmitterReceiveMessage =
 export const useSimulateMessageTransmitterReplaceMessage =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'replaceMessage',
   })
 
@@ -1947,6 +2009,7 @@ export const useSimulateMessageTransmitterReplaceMessage =
 export const useSimulateMessageTransmitterRescueErc20 =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'rescueERC20',
   })
 
@@ -1956,6 +2019,7 @@ export const useSimulateMessageTransmitterRescueErc20 =
 export const useSimulateMessageTransmitterSendMessage =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'sendMessage',
   })
 
@@ -1965,6 +2029,7 @@ export const useSimulateMessageTransmitterSendMessage =
 export const useSimulateMessageTransmitterSendMessageWithCaller =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'sendMessageWithCaller',
   })
 
@@ -1974,6 +2039,7 @@ export const useSimulateMessageTransmitterSendMessageWithCaller =
 export const useSimulateMessageTransmitterSetMaxMessageBodySize =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'setMaxMessageBodySize',
   })
 
@@ -1983,6 +2049,7 @@ export const useSimulateMessageTransmitterSetMaxMessageBodySize =
 export const useSimulateMessageTransmitterSetSignatureThreshold =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'setSignatureThreshold',
   })
 
@@ -1992,6 +2059,7 @@ export const useSimulateMessageTransmitterSetSignatureThreshold =
 export const useSimulateMessageTransmitterTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'transferOwnership',
   })
 
@@ -2001,6 +2069,7 @@ export const useSimulateMessageTransmitterTransferOwnership =
 export const useSimulateMessageTransmitterUnpause =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'unpause',
   })
 
@@ -2010,6 +2079,7 @@ export const useSimulateMessageTransmitterUnpause =
 export const useSimulateMessageTransmitterUpdateAttesterManager =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'updateAttesterManager',
   })
 
@@ -2019,6 +2089,7 @@ export const useSimulateMessageTransmitterUpdateAttesterManager =
 export const useSimulateMessageTransmitterUpdatePauser =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'updatePauser',
   })
 
@@ -2028,6 +2099,7 @@ export const useSimulateMessageTransmitterUpdatePauser =
 export const useSimulateMessageTransmitterUpdateRescuer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     functionName: 'updateRescuer',
   })
 
@@ -2035,7 +2107,10 @@ export const useSimulateMessageTransmitterUpdateRescuer =
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link messageTransmitterAbi}__
  */
 export const useWatchMessageTransmitterEvent =
-  /*#__PURE__*/ createUseWatchContractEvent({ abi: messageTransmitterAbi })
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link messageTransmitterAbi}__ and `eventName` set to `"AttesterDisabled"`
@@ -2043,6 +2118,7 @@ export const useWatchMessageTransmitterEvent =
 export const useWatchMessageTransmitterAttesterDisabledEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'AttesterDisabled',
   })
 
@@ -2052,6 +2128,7 @@ export const useWatchMessageTransmitterAttesterDisabledEvent =
 export const useWatchMessageTransmitterAttesterEnabledEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'AttesterEnabled',
   })
 
@@ -2061,6 +2138,7 @@ export const useWatchMessageTransmitterAttesterEnabledEvent =
 export const useWatchMessageTransmitterAttesterManagerUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'AttesterManagerUpdated',
   })
 
@@ -2070,6 +2148,7 @@ export const useWatchMessageTransmitterAttesterManagerUpdatedEvent =
 export const useWatchMessageTransmitterMaxMessageBodySizeUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'MaxMessageBodySizeUpdated',
   })
 
@@ -2079,6 +2158,7 @@ export const useWatchMessageTransmitterMaxMessageBodySizeUpdatedEvent =
 export const useWatchMessageTransmitterMessageReceivedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'MessageReceived',
   })
 
@@ -2088,6 +2168,7 @@ export const useWatchMessageTransmitterMessageReceivedEvent =
 export const useWatchMessageTransmitterMessageSentEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'MessageSent',
   })
 
@@ -2097,6 +2178,7 @@ export const useWatchMessageTransmitterMessageSentEvent =
 export const useWatchMessageTransmitterOwnershipTransferStartedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'OwnershipTransferStarted',
   })
 
@@ -2106,6 +2188,7 @@ export const useWatchMessageTransmitterOwnershipTransferStartedEvent =
 export const useWatchMessageTransmitterOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'OwnershipTransferred',
   })
 
@@ -2115,6 +2198,7 @@ export const useWatchMessageTransmitterOwnershipTransferredEvent =
 export const useWatchMessageTransmitterPauseEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'Pause',
   })
 
@@ -2124,6 +2208,7 @@ export const useWatchMessageTransmitterPauseEvent =
 export const useWatchMessageTransmitterPauserChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'PauserChanged',
   })
 
@@ -2133,6 +2218,7 @@ export const useWatchMessageTransmitterPauserChangedEvent =
 export const useWatchMessageTransmitterRescuerChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'RescuerChanged',
   })
 
@@ -2142,6 +2228,7 @@ export const useWatchMessageTransmitterRescuerChangedEvent =
 export const useWatchMessageTransmitterSignatureThresholdUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'SignatureThresholdUpdated',
   })
 
@@ -2151,6 +2238,7 @@ export const useWatchMessageTransmitterSignatureThresholdUpdatedEvent =
 export const useWatchMessageTransmitterUnpauseEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: messageTransmitterAbi,
+    address: messageTransmitterAddress,
     eventName: 'Unpause',
   })
 
@@ -2159,6 +2247,7 @@ export const useWatchMessageTransmitterUnpauseEvent =
  */
 export const useReadTokenMessanger = /*#__PURE__*/ createUseReadContract({
   abi: tokenMessangerAbi,
+  address: tokenMessangerAddress,
 })
 
 /**
@@ -2167,6 +2256,7 @@ export const useReadTokenMessanger = /*#__PURE__*/ createUseReadContract({
 export const useReadTokenMessangerLocalMessageTransmitter =
   /*#__PURE__*/ createUseReadContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'localMessageTransmitter',
   })
 
@@ -2176,6 +2266,7 @@ export const useReadTokenMessangerLocalMessageTransmitter =
 export const useReadTokenMessangerLocalMinter =
   /*#__PURE__*/ createUseReadContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'localMinter',
   })
 
@@ -2185,6 +2276,7 @@ export const useReadTokenMessangerLocalMinter =
 export const useReadTokenMessangerMessageBodyVersion =
   /*#__PURE__*/ createUseReadContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'messageBodyVersion',
   })
 
@@ -2193,6 +2285,7 @@ export const useReadTokenMessangerMessageBodyVersion =
  */
 export const useReadTokenMessangerOwner = /*#__PURE__*/ createUseReadContract({
   abi: tokenMessangerAbi,
+  address: tokenMessangerAddress,
   functionName: 'owner',
 })
 
@@ -2202,6 +2295,7 @@ export const useReadTokenMessangerOwner = /*#__PURE__*/ createUseReadContract({
 export const useReadTokenMessangerPendingOwner =
   /*#__PURE__*/ createUseReadContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'pendingOwner',
   })
 
@@ -2211,6 +2305,7 @@ export const useReadTokenMessangerPendingOwner =
 export const useReadTokenMessangerRemoteTokenMessengers =
   /*#__PURE__*/ createUseReadContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'remoteTokenMessengers',
   })
 
@@ -2218,7 +2313,11 @@ export const useReadTokenMessangerRemoteTokenMessengers =
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link tokenMessangerAbi}__ and `functionName` set to `"rescuer"`
  */
 export const useReadTokenMessangerRescuer = /*#__PURE__*/ createUseReadContract(
-  { abi: tokenMessangerAbi, functionName: 'rescuer' },
+  {
+    abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
+    functionName: 'rescuer',
+  },
 )
 
 /**
@@ -2226,6 +2325,7 @@ export const useReadTokenMessangerRescuer = /*#__PURE__*/ createUseReadContract(
  */
 export const useWriteTokenMessanger = /*#__PURE__*/ createUseWriteContract({
   abi: tokenMessangerAbi,
+  address: tokenMessangerAddress,
 })
 
 /**
@@ -2234,6 +2334,7 @@ export const useWriteTokenMessanger = /*#__PURE__*/ createUseWriteContract({
 export const useWriteTokenMessangerAcceptOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'acceptOwnership',
   })
 
@@ -2243,6 +2344,7 @@ export const useWriteTokenMessangerAcceptOwnership =
 export const useWriteTokenMessangerAddLocalMinter =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'addLocalMinter',
   })
 
@@ -2252,6 +2354,7 @@ export const useWriteTokenMessangerAddLocalMinter =
 export const useWriteTokenMessangerAddRemoteTokenMessenger =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'addRemoteTokenMessenger',
   })
 
@@ -2261,6 +2364,7 @@ export const useWriteTokenMessangerAddRemoteTokenMessenger =
 export const useWriteTokenMessangerDepositForBurn =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'depositForBurn',
   })
 
@@ -2270,6 +2374,7 @@ export const useWriteTokenMessangerDepositForBurn =
 export const useWriteTokenMessangerDepositForBurnWithCaller =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'depositForBurnWithCaller',
   })
 
@@ -2279,6 +2384,7 @@ export const useWriteTokenMessangerDepositForBurnWithCaller =
 export const useWriteTokenMessangerHandleReceiveMessage =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'handleReceiveMessage',
   })
 
@@ -2288,6 +2394,7 @@ export const useWriteTokenMessangerHandleReceiveMessage =
 export const useWriteTokenMessangerRemoveLocalMinter =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'removeLocalMinter',
   })
 
@@ -2297,6 +2404,7 @@ export const useWriteTokenMessangerRemoveLocalMinter =
 export const useWriteTokenMessangerRemoveRemoteTokenMessenger =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'removeRemoteTokenMessenger',
   })
 
@@ -2306,6 +2414,7 @@ export const useWriteTokenMessangerRemoveRemoteTokenMessenger =
 export const useWriteTokenMessangerReplaceDepositForBurn =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'replaceDepositForBurn',
   })
 
@@ -2315,6 +2424,7 @@ export const useWriteTokenMessangerReplaceDepositForBurn =
 export const useWriteTokenMessangerRescueErc20 =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'rescueERC20',
   })
 
@@ -2324,6 +2434,7 @@ export const useWriteTokenMessangerRescueErc20 =
 export const useWriteTokenMessangerTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'transferOwnership',
   })
 
@@ -2333,6 +2444,7 @@ export const useWriteTokenMessangerTransferOwnership =
 export const useWriteTokenMessangerUpdateRescuer =
   /*#__PURE__*/ createUseWriteContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'updateRescuer',
   })
 
@@ -2340,7 +2452,10 @@ export const useWriteTokenMessangerUpdateRescuer =
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link tokenMessangerAbi}__
  */
 export const useSimulateTokenMessanger =
-  /*#__PURE__*/ createUseSimulateContract({ abi: tokenMessangerAbi })
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
+  })
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link tokenMessangerAbi}__ and `functionName` set to `"acceptOwnership"`
@@ -2348,6 +2463,7 @@ export const useSimulateTokenMessanger =
 export const useSimulateTokenMessangerAcceptOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'acceptOwnership',
   })
 
@@ -2357,6 +2473,7 @@ export const useSimulateTokenMessangerAcceptOwnership =
 export const useSimulateTokenMessangerAddLocalMinter =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'addLocalMinter',
   })
 
@@ -2366,6 +2483,7 @@ export const useSimulateTokenMessangerAddLocalMinter =
 export const useSimulateTokenMessangerAddRemoteTokenMessenger =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'addRemoteTokenMessenger',
   })
 
@@ -2375,6 +2493,7 @@ export const useSimulateTokenMessangerAddRemoteTokenMessenger =
 export const useSimulateTokenMessangerDepositForBurn =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'depositForBurn',
   })
 
@@ -2384,6 +2503,7 @@ export const useSimulateTokenMessangerDepositForBurn =
 export const useSimulateTokenMessangerDepositForBurnWithCaller =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'depositForBurnWithCaller',
   })
 
@@ -2393,6 +2513,7 @@ export const useSimulateTokenMessangerDepositForBurnWithCaller =
 export const useSimulateTokenMessangerHandleReceiveMessage =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'handleReceiveMessage',
   })
 
@@ -2402,6 +2523,7 @@ export const useSimulateTokenMessangerHandleReceiveMessage =
 export const useSimulateTokenMessangerRemoveLocalMinter =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'removeLocalMinter',
   })
 
@@ -2411,6 +2533,7 @@ export const useSimulateTokenMessangerRemoveLocalMinter =
 export const useSimulateTokenMessangerRemoveRemoteTokenMessenger =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'removeRemoteTokenMessenger',
   })
 
@@ -2420,6 +2543,7 @@ export const useSimulateTokenMessangerRemoveRemoteTokenMessenger =
 export const useSimulateTokenMessangerReplaceDepositForBurn =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'replaceDepositForBurn',
   })
 
@@ -2429,6 +2553,7 @@ export const useSimulateTokenMessangerReplaceDepositForBurn =
 export const useSimulateTokenMessangerRescueErc20 =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'rescueERC20',
   })
 
@@ -2438,6 +2563,7 @@ export const useSimulateTokenMessangerRescueErc20 =
 export const useSimulateTokenMessangerTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'transferOwnership',
   })
 
@@ -2447,6 +2573,7 @@ export const useSimulateTokenMessangerTransferOwnership =
 export const useSimulateTokenMessangerUpdateRescuer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     functionName: 'updateRescuer',
   })
 
@@ -2454,7 +2581,10 @@ export const useSimulateTokenMessangerUpdateRescuer =
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link tokenMessangerAbi}__
  */
 export const useWatchTokenMessangerEvent =
-  /*#__PURE__*/ createUseWatchContractEvent({ abi: tokenMessangerAbi })
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
+  })
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link tokenMessangerAbi}__ and `eventName` set to `"DepositForBurn"`
@@ -2462,6 +2592,7 @@ export const useWatchTokenMessangerEvent =
 export const useWatchTokenMessangerDepositForBurnEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'DepositForBurn',
   })
 
@@ -2471,6 +2602,7 @@ export const useWatchTokenMessangerDepositForBurnEvent =
 export const useWatchTokenMessangerLocalMinterAddedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'LocalMinterAdded',
   })
 
@@ -2480,6 +2612,7 @@ export const useWatchTokenMessangerLocalMinterAddedEvent =
 export const useWatchTokenMessangerLocalMinterRemovedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'LocalMinterRemoved',
   })
 
@@ -2489,6 +2622,7 @@ export const useWatchTokenMessangerLocalMinterRemovedEvent =
 export const useWatchTokenMessangerMintAndWithdrawEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'MintAndWithdraw',
   })
 
@@ -2498,6 +2632,7 @@ export const useWatchTokenMessangerMintAndWithdrawEvent =
 export const useWatchTokenMessangerOwnershipTransferStartedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'OwnershipTransferStarted',
   })
 
@@ -2507,6 +2642,7 @@ export const useWatchTokenMessangerOwnershipTransferStartedEvent =
 export const useWatchTokenMessangerOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'OwnershipTransferred',
   })
 
@@ -2516,6 +2652,7 @@ export const useWatchTokenMessangerOwnershipTransferredEvent =
 export const useWatchTokenMessangerRemoteTokenMessengerAddedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'RemoteTokenMessengerAdded',
   })
 
@@ -2525,6 +2662,7 @@ export const useWatchTokenMessangerRemoteTokenMessengerAddedEvent =
 export const useWatchTokenMessangerRemoteTokenMessengerRemovedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'RemoteTokenMessengerRemoved',
   })
 
@@ -2534,13 +2672,17 @@ export const useWatchTokenMessangerRemoteTokenMessengerRemovedEvent =
 export const useWatchTokenMessangerRescuerChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: tokenMessangerAbi,
+    address: tokenMessangerAddress,
     eventName: 'RescuerChanged',
   })
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link usdcAbi}__
  */
-export const useReadUsdc = /*#__PURE__*/ createUseReadContract({ abi: usdcAbi })
+export const useReadUsdc = /*#__PURE__*/ createUseReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+})
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"CANCEL_AUTHORIZATION_TYPEHASH"`
@@ -2548,6 +2690,7 @@ export const useReadUsdc = /*#__PURE__*/ createUseReadContract({ abi: usdcAbi })
 export const useReadUsdcCancelAuthorizationTypehash =
   /*#__PURE__*/ createUseReadContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'CANCEL_AUTHORIZATION_TYPEHASH',
   })
 
@@ -2556,6 +2699,7 @@ export const useReadUsdcCancelAuthorizationTypehash =
  */
 export const useReadUsdcDomainSeparator = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'DOMAIN_SEPARATOR',
 })
 
@@ -2564,6 +2708,7 @@ export const useReadUsdcDomainSeparator = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcPermitTypehash = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'PERMIT_TYPEHASH',
 })
 
@@ -2573,6 +2718,7 @@ export const useReadUsdcPermitTypehash = /*#__PURE__*/ createUseReadContract({
 export const useReadUsdcReceiveWithAuthorizationTypehash =
   /*#__PURE__*/ createUseReadContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'RECEIVE_WITH_AUTHORIZATION_TYPEHASH',
   })
 
@@ -2582,6 +2728,7 @@ export const useReadUsdcReceiveWithAuthorizationTypehash =
 export const useReadUsdcTransferWithAuthorizationTypehash =
   /*#__PURE__*/ createUseReadContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'TRANSFER_WITH_AUTHORIZATION_TYPEHASH',
   })
 
@@ -2590,6 +2737,7 @@ export const useReadUsdcTransferWithAuthorizationTypehash =
  */
 export const useReadUsdcAllowance = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'allowance',
 })
 
@@ -2599,6 +2747,7 @@ export const useReadUsdcAllowance = /*#__PURE__*/ createUseReadContract({
 export const useReadUsdcAuthorizationState =
   /*#__PURE__*/ createUseReadContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'authorizationState',
   })
 
@@ -2607,6 +2756,7 @@ export const useReadUsdcAuthorizationState =
  */
 export const useReadUsdcBalanceOf = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'balanceOf',
 })
 
@@ -2615,6 +2765,7 @@ export const useReadUsdcBalanceOf = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcBlacklister = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'blacklister',
 })
 
@@ -2623,6 +2774,7 @@ export const useReadUsdcBlacklister = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcCurrency = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'currency',
 })
 
@@ -2631,6 +2783,7 @@ export const useReadUsdcCurrency = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcDecimals = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'decimals',
 })
 
@@ -2639,6 +2792,7 @@ export const useReadUsdcDecimals = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcIsBlacklisted = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'isBlacklisted',
 })
 
@@ -2647,6 +2801,7 @@ export const useReadUsdcIsBlacklisted = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcIsMinter = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'isMinter',
 })
 
@@ -2655,6 +2810,7 @@ export const useReadUsdcIsMinter = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcMasterMinter = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'masterMinter',
 })
 
@@ -2663,6 +2819,7 @@ export const useReadUsdcMasterMinter = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcMinterAllowance = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'minterAllowance',
 })
 
@@ -2671,6 +2828,7 @@ export const useReadUsdcMinterAllowance = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcName = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'name',
 })
 
@@ -2679,6 +2837,7 @@ export const useReadUsdcName = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcNonces = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'nonces',
 })
 
@@ -2687,6 +2846,7 @@ export const useReadUsdcNonces = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcOwner = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'owner',
 })
 
@@ -2695,6 +2855,7 @@ export const useReadUsdcOwner = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcPaused = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'paused',
 })
 
@@ -2703,6 +2864,7 @@ export const useReadUsdcPaused = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcPauser = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'pauser',
 })
 
@@ -2711,6 +2873,7 @@ export const useReadUsdcPauser = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcRescuer = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'rescuer',
 })
 
@@ -2719,6 +2882,7 @@ export const useReadUsdcRescuer = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcSymbol = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'symbol',
 })
 
@@ -2727,6 +2891,7 @@ export const useReadUsdcSymbol = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcTotalSupply = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'totalSupply',
 })
 
@@ -2735,6 +2900,7 @@ export const useReadUsdcTotalSupply = /*#__PURE__*/ createUseReadContract({
  */
 export const useReadUsdcVersion = /*#__PURE__*/ createUseReadContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'version',
 })
 
@@ -2743,6 +2909,7 @@ export const useReadUsdcVersion = /*#__PURE__*/ createUseReadContract({
  */
 export const useWriteUsdc = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
 })
 
 /**
@@ -2750,6 +2917,7 @@ export const useWriteUsdc = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcApprove = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'approve',
 })
 
@@ -2758,6 +2926,7 @@ export const useWriteUsdcApprove = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcBlacklist = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'blacklist',
 })
 
@@ -2766,6 +2935,7 @@ export const useWriteUsdcBlacklist = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcBurn = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'burn',
 })
 
@@ -2775,6 +2945,7 @@ export const useWriteUsdcBurn = /*#__PURE__*/ createUseWriteContract({
 export const useWriteUsdcCancelAuthorization =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'cancelAuthorization',
   })
 
@@ -2782,7 +2953,7 @@ export const useWriteUsdcCancelAuthorization =
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"configureMinter"`
  */
 export const useWriteUsdcConfigureMinter = /*#__PURE__*/ createUseWriteContract(
-  { abi: usdcAbi, functionName: 'configureMinter' },
+  { abi: usdcAbi, address: usdcAddress, functionName: 'configureMinter' },
 )
 
 /**
@@ -2791,6 +2962,7 @@ export const useWriteUsdcConfigureMinter = /*#__PURE__*/ createUseWriteContract(
 export const useWriteUsdcDecreaseAllowance =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'decreaseAllowance',
   })
 
@@ -2800,6 +2972,7 @@ export const useWriteUsdcDecreaseAllowance =
 export const useWriteUsdcIncreaseAllowance =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'increaseAllowance',
   })
 
@@ -2808,6 +2981,7 @@ export const useWriteUsdcIncreaseAllowance =
  */
 export const useWriteUsdcInitialize = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'initialize',
 })
 
@@ -2816,6 +2990,7 @@ export const useWriteUsdcInitialize = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcInitializeV2 = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'initializeV2',
 })
 
@@ -2824,6 +2999,7 @@ export const useWriteUsdcInitializeV2 = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcInitializeV2_1 = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'initializeV2_1',
 })
 
@@ -2832,6 +3008,7 @@ export const useWriteUsdcInitializeV2_1 = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcMint = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'mint',
 })
 
@@ -2840,6 +3017,7 @@ export const useWriteUsdcMint = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcPause = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'pause',
 })
 
@@ -2848,6 +3026,7 @@ export const useWriteUsdcPause = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcPermit = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'permit',
 })
 
@@ -2857,6 +3036,7 @@ export const useWriteUsdcPermit = /*#__PURE__*/ createUseWriteContract({
 export const useWriteUsdcReceiveWithAuthorization =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'receiveWithAuthorization',
   })
 
@@ -2865,6 +3045,7 @@ export const useWriteUsdcReceiveWithAuthorization =
  */
 export const useWriteUsdcRemoveMinter = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'removeMinter',
 })
 
@@ -2873,6 +3054,7 @@ export const useWriteUsdcRemoveMinter = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcRescueErc20 = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'rescueERC20',
 })
 
@@ -2881,6 +3063,7 @@ export const useWriteUsdcRescueErc20 = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcTransfer = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'transfer',
 })
 
@@ -2889,6 +3072,7 @@ export const useWriteUsdcTransfer = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcTransferFrom = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'transferFrom',
 })
 
@@ -2898,6 +3082,7 @@ export const useWriteUsdcTransferFrom = /*#__PURE__*/ createUseWriteContract({
 export const useWriteUsdcTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'transferOwnership',
   })
 
@@ -2907,6 +3092,7 @@ export const useWriteUsdcTransferOwnership =
 export const useWriteUsdcTransferWithAuthorization =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'transferWithAuthorization',
   })
 
@@ -2915,6 +3101,7 @@ export const useWriteUsdcTransferWithAuthorization =
  */
 export const useWriteUsdcUnBlacklist = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'unBlacklist',
 })
 
@@ -2923,6 +3110,7 @@ export const useWriteUsdcUnBlacklist = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcUnpause = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'unpause',
 })
 
@@ -2932,6 +3120,7 @@ export const useWriteUsdcUnpause = /*#__PURE__*/ createUseWriteContract({
 export const useWriteUsdcUpdateBlacklister =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'updateBlacklister',
   })
 
@@ -2941,6 +3130,7 @@ export const useWriteUsdcUpdateBlacklister =
 export const useWriteUsdcUpdateMasterMinter =
   /*#__PURE__*/ createUseWriteContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'updateMasterMinter',
   })
 
@@ -2949,6 +3139,7 @@ export const useWriteUsdcUpdateMasterMinter =
  */
 export const useWriteUsdcUpdatePauser = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'updatePauser',
 })
 
@@ -2957,6 +3148,7 @@ export const useWriteUsdcUpdatePauser = /*#__PURE__*/ createUseWriteContract({
  */
 export const useWriteUsdcUpdateRescuer = /*#__PURE__*/ createUseWriteContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'updateRescuer',
 })
 
@@ -2965,6 +3157,7 @@ export const useWriteUsdcUpdateRescuer = /*#__PURE__*/ createUseWriteContract({
  */
 export const useSimulateUsdc = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
 })
 
 /**
@@ -2972,6 +3165,7 @@ export const useSimulateUsdc = /*#__PURE__*/ createUseSimulateContract({
  */
 export const useSimulateUsdcApprove = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'approve',
 })
 
@@ -2979,7 +3173,7 @@ export const useSimulateUsdcApprove = /*#__PURE__*/ createUseSimulateContract({
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"blacklist"`
  */
 export const useSimulateUsdcBlacklist = /*#__PURE__*/ createUseSimulateContract(
-  { abi: usdcAbi, functionName: 'blacklist' },
+  { abi: usdcAbi, address: usdcAddress, functionName: 'blacklist' },
 )
 
 /**
@@ -2987,6 +3181,7 @@ export const useSimulateUsdcBlacklist = /*#__PURE__*/ createUseSimulateContract(
  */
 export const useSimulateUsdcBurn = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'burn',
 })
 
@@ -2996,6 +3191,7 @@ export const useSimulateUsdcBurn = /*#__PURE__*/ createUseSimulateContract({
 export const useSimulateUsdcCancelAuthorization =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'cancelAuthorization',
   })
 
@@ -3005,6 +3201,7 @@ export const useSimulateUsdcCancelAuthorization =
 export const useSimulateUsdcConfigureMinter =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'configureMinter',
   })
 
@@ -3014,6 +3211,7 @@ export const useSimulateUsdcConfigureMinter =
 export const useSimulateUsdcDecreaseAllowance =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'decreaseAllowance',
   })
 
@@ -3023,6 +3221,7 @@ export const useSimulateUsdcDecreaseAllowance =
 export const useSimulateUsdcIncreaseAllowance =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'increaseAllowance',
   })
 
@@ -3032,6 +3231,7 @@ export const useSimulateUsdcIncreaseAllowance =
 export const useSimulateUsdcInitialize =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'initialize',
   })
 
@@ -3041,6 +3241,7 @@ export const useSimulateUsdcInitialize =
 export const useSimulateUsdcInitializeV2 =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'initializeV2',
   })
 
@@ -3050,6 +3251,7 @@ export const useSimulateUsdcInitializeV2 =
 export const useSimulateUsdcInitializeV2_1 =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'initializeV2_1',
   })
 
@@ -3058,6 +3260,7 @@ export const useSimulateUsdcInitializeV2_1 =
  */
 export const useSimulateUsdcMint = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'mint',
 })
 
@@ -3066,6 +3269,7 @@ export const useSimulateUsdcMint = /*#__PURE__*/ createUseSimulateContract({
  */
 export const useSimulateUsdcPause = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'pause',
 })
 
@@ -3074,6 +3278,7 @@ export const useSimulateUsdcPause = /*#__PURE__*/ createUseSimulateContract({
  */
 export const useSimulateUsdcPermit = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'permit',
 })
 
@@ -3083,6 +3288,7 @@ export const useSimulateUsdcPermit = /*#__PURE__*/ createUseSimulateContract({
 export const useSimulateUsdcReceiveWithAuthorization =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'receiveWithAuthorization',
   })
 
@@ -3092,6 +3298,7 @@ export const useSimulateUsdcReceiveWithAuthorization =
 export const useSimulateUsdcRemoveMinter =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'removeMinter',
   })
 
@@ -3101,6 +3308,7 @@ export const useSimulateUsdcRemoveMinter =
 export const useSimulateUsdcRescueErc20 =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'rescueERC20',
   })
 
@@ -3109,6 +3317,7 @@ export const useSimulateUsdcRescueErc20 =
  */
 export const useSimulateUsdcTransfer = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'transfer',
 })
 
@@ -3118,6 +3327,7 @@ export const useSimulateUsdcTransfer = /*#__PURE__*/ createUseSimulateContract({
 export const useSimulateUsdcTransferFrom =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'transferFrom',
   })
 
@@ -3127,6 +3337,7 @@ export const useSimulateUsdcTransferFrom =
 export const useSimulateUsdcTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'transferOwnership',
   })
 
@@ -3136,6 +3347,7 @@ export const useSimulateUsdcTransferOwnership =
 export const useSimulateUsdcTransferWithAuthorization =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'transferWithAuthorization',
   })
 
@@ -3145,6 +3357,7 @@ export const useSimulateUsdcTransferWithAuthorization =
 export const useSimulateUsdcUnBlacklist =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'unBlacklist',
   })
 
@@ -3153,6 +3366,7 @@ export const useSimulateUsdcUnBlacklist =
  */
 export const useSimulateUsdcUnpause = /*#__PURE__*/ createUseSimulateContract({
   abi: usdcAbi,
+  address: usdcAddress,
   functionName: 'unpause',
 })
 
@@ -3162,6 +3376,7 @@ export const useSimulateUsdcUnpause = /*#__PURE__*/ createUseSimulateContract({
 export const useSimulateUsdcUpdateBlacklister =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'updateBlacklister',
   })
 
@@ -3171,6 +3386,7 @@ export const useSimulateUsdcUpdateBlacklister =
 export const useSimulateUsdcUpdateMasterMinter =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'updateMasterMinter',
   })
 
@@ -3180,6 +3396,7 @@ export const useSimulateUsdcUpdateMasterMinter =
 export const useSimulateUsdcUpdatePauser =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'updatePauser',
   })
 
@@ -3189,6 +3406,7 @@ export const useSimulateUsdcUpdatePauser =
 export const useSimulateUsdcUpdateRescuer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: usdcAbi,
+    address: usdcAddress,
     functionName: 'updateRescuer',
   })
 
@@ -3197,6 +3415,7 @@ export const useSimulateUsdcUpdateRescuer =
  */
 export const useWatchUsdcEvent = /*#__PURE__*/ createUseWatchContractEvent({
   abi: usdcAbi,
+  address: usdcAddress,
 })
 
 /**
@@ -3205,6 +3424,7 @@ export const useWatchUsdcEvent = /*#__PURE__*/ createUseWatchContractEvent({
 export const useWatchUsdcApprovalEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'Approval',
   })
 
@@ -3214,6 +3434,7 @@ export const useWatchUsdcApprovalEvent =
 export const useWatchUsdcAuthorizationCanceledEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'AuthorizationCanceled',
   })
 
@@ -3223,6 +3444,7 @@ export const useWatchUsdcAuthorizationCanceledEvent =
 export const useWatchUsdcAuthorizationUsedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'AuthorizationUsed',
   })
 
@@ -3232,6 +3454,7 @@ export const useWatchUsdcAuthorizationUsedEvent =
 export const useWatchUsdcBlacklistedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'Blacklisted',
   })
 
@@ -3241,6 +3464,7 @@ export const useWatchUsdcBlacklistedEvent =
 export const useWatchUsdcBlacklisterChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'BlacklisterChanged',
   })
 
@@ -3249,6 +3473,7 @@ export const useWatchUsdcBlacklisterChangedEvent =
  */
 export const useWatchUsdcBurnEvent = /*#__PURE__*/ createUseWatchContractEvent({
   abi: usdcAbi,
+  address: usdcAddress,
   eventName: 'Burn',
 })
 
@@ -3258,6 +3483,7 @@ export const useWatchUsdcBurnEvent = /*#__PURE__*/ createUseWatchContractEvent({
 export const useWatchUsdcMasterMinterChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'MasterMinterChanged',
   })
 
@@ -3266,6 +3492,7 @@ export const useWatchUsdcMasterMinterChangedEvent =
  */
 export const useWatchUsdcMintEvent = /*#__PURE__*/ createUseWatchContractEvent({
   abi: usdcAbi,
+  address: usdcAddress,
   eventName: 'Mint',
 })
 
@@ -3275,6 +3502,7 @@ export const useWatchUsdcMintEvent = /*#__PURE__*/ createUseWatchContractEvent({
 export const useWatchUsdcMinterConfiguredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'MinterConfigured',
   })
 
@@ -3284,6 +3512,7 @@ export const useWatchUsdcMinterConfiguredEvent =
 export const useWatchUsdcMinterRemovedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'MinterRemoved',
   })
 
@@ -3293,6 +3522,7 @@ export const useWatchUsdcMinterRemovedEvent =
 export const useWatchUsdcOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'OwnershipTransferred',
   })
 
@@ -3300,7 +3530,7 @@ export const useWatchUsdcOwnershipTransferredEvent =
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link usdcAbi}__ and `eventName` set to `"Pause"`
  */
 export const useWatchUsdcPauseEvent = /*#__PURE__*/ createUseWatchContractEvent(
-  { abi: usdcAbi, eventName: 'Pause' },
+  { abi: usdcAbi, address: usdcAddress, eventName: 'Pause' },
 )
 
 /**
@@ -3309,6 +3539,7 @@ export const useWatchUsdcPauseEvent = /*#__PURE__*/ createUseWatchContractEvent(
 export const useWatchUsdcPauserChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'PauserChanged',
   })
 
@@ -3318,6 +3549,7 @@ export const useWatchUsdcPauserChangedEvent =
 export const useWatchUsdcRescuerChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'RescuerChanged',
   })
 
@@ -3327,6 +3559,7 @@ export const useWatchUsdcRescuerChangedEvent =
 export const useWatchUsdcTransferEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'Transfer',
   })
 
@@ -3336,6 +3569,7 @@ export const useWatchUsdcTransferEvent =
 export const useWatchUsdcUnBlacklistedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'UnBlacklisted',
   })
 
@@ -3345,5 +3579,6 @@ export const useWatchUsdcUnBlacklistedEvent =
 export const useWatchUsdcUnpauseEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: usdcAbi,
+    address: usdcAddress,
     eventName: 'Unpause',
   })
