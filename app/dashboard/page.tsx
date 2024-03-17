@@ -1,9 +1,20 @@
 import Address from "@/components/Address";
+import Alias from "@/components/Alias";
 import ButtonLogoutDynamic from "@/components/ButtonLogoutDynamic";
 import ModalCreatePrepaid from "@/components/ModalCreatePrepaid";
+import prisma from "@/lib/prisma";
 import Image from "next/image";
 
 export default async function Page() {
+
+  const prepaid = await prisma.prepaid.findMany()
+
+  const prepaid_balance = prepaid.reduce((accumulator, currentValue) => {
+    return accumulator + parseInt(currentValue.balance);
+  }, 0);
+
+  const max_balance = 2000;
+  const new_balance = max_balance - prepaid_balance;
 
   return (
     <main className="px-8 md:px-24 py-12">
@@ -21,18 +32,18 @@ export default async function Page() {
             <div className="mx-auto">
               <Image src="/avatar.png" alt="Logo" width={120} height={120} />
             </div>
-            <div className="mt-4 font-bold text-3xl">{"test"}</div>
+            <div className="mt-4 font-bold text-3xl"><Alias /></div>
             <div className="mt-4">
               <Address />
             </div>
-            <div className="mt-6">Prepaid wallets: 15</div>
+            <div className="mt-6">Prepaid wallets: {prepaid.length}</div>
           </div>
         </div>
         <div className="col-span-1 xl:col-span-2 rounded-md shadow-md bg-[url('/bg-card.png')] bg-no-repeat bg-cover flex flex-col">
           <div className="px-8 mt-20 text-4xl font-semibold text-white">
             Your wallet balance is:
           </div>
-          <div className="flex-grow px-8 text-6xl mt-6 text-white">400$ USDC</div>
+          <div className="flex-grow px-8 text-6xl mt-6 text-white">{new_balance}$ USDC</div>
           <div className="px-8 pt-20 pb-10">
             <ModalCreatePrepaid />
           </div>
@@ -53,20 +64,20 @@ export default async function Page() {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            <tr>
+           {prepaid.map((item) => <tr key={item.address}>
               <th>
-                <span className="font-bold text-xl">20-03-2024</span>
+                <span className="font-bold text-xl">17-03-2024</span>
                 <br></br>
                 <span className="text-gray-400">date</span>
               </th>
-              <td><span className="font-bold text-xl">feka.7h@skiff.com</span>
+              <td><span className="font-bold text-xl">{item.email}</span>
                 <br></br>
                 <span className="text-gray-400">email</span></td>
-              <td><span className="font-bold text-xl">150$ USDC</span>
+              <td><span className="font-bold text-xl">{item.balance}$ USDC</span>
                 <br></br>
                 <span className="text-gray-400">balance</span></td>
-            </tr>
+            </tr>)}
+            
           </tbody>
         </table>
       </div>

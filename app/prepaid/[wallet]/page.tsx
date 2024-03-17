@@ -33,16 +33,16 @@ export default async function Page({ params }: { params: { wallet: string } }) {
             </div>
             <div className="mt-4 font-bold text-3xl">{wallet?.email}</div>
             <div className="mt-4">
-              {wallet.address}
+              {wallet.address.substring(0, 42)}
             </div>
-            <div className="mt-6">Mint date: 16-03-2024</div>
+            <div className="mt-6">Mint date: 17-03-2024</div>
           </div>
         </div>
         <div className="col-span-1 xl:col-span-2 rounded-md shadow-md bg-[url('/bg-card-pur.png')] bg-no-repeat bg-cover flex flex-col">
           <div className="px-8 mt-20 text-4xl font-semibold text-white">
             Prepaid wallet balance:
           </div>
-          <div className="flex-grow px-8 text-6xl mt-6 text-white">100$ USDC</div>
+          <div className="flex-grow px-8 text-6xl mt-6 text-white">{wallet.balance}$ USDC</div>
           <div className="px-8 pt-20 pb-10">
             <ModalSendTransaction />
           </div>
@@ -65,17 +65,8 @@ export default async function Page({ params }: { params: { wallet: string } }) {
           <tbody>
             {/* row 1 */}
             <tr>
-              <th>
-                <span className="font-bold text-xl">20-03-2024</span>
-                <br></br>
-                <span className="text-gray-400">date</span>
+              <th className="text-xl">No transactions found
               </th>
-              <td><span className="font-bold text-xl">0x7335f8648bf761c7796E275DA797B68AFcd1dB41</span>
-                <br></br>
-                <span className="text-gray-400">receiver</span></td>
-              <td><span className="font-bold text-xl">50$ USDC</span>
-                <br></br>
-                <span className="text-gray-400">amount</span></td>
             </tr>
           </tbody>
         </table>

@@ -13,6 +13,7 @@ import { useAccount } from "wagmi";
 import ButtonSubmit from "./ButtonSubmit";
 import { createPrepaidWallet } from "@/actions/createPrepaidWallet";
 import toast from "react-hot-toast";
+import { mockCreatePrepaid } from "@/actions/mockCreatePrepaid";
 
 export default function ModalCreatePrepaid() {
   const ref = useRef<HTMLDialogElement>(null);
@@ -24,6 +25,7 @@ export default function ModalCreatePrepaid() {
 
   const submit = async (form: FormData) => {
     if (process.env.NODE_ENV === "development") {
+      await mockCreatePrepaid(form)
       ref.current?.close()
       toast.success("Prepaid created successfully!")
       return null;
@@ -87,11 +89,11 @@ export default function ModalCreatePrepaid() {
             </div>
 
             <div className="form-control mt-2">
-              <label htmlFor="number">Number:</label>
+              <label htmlFor="balance">Balance:</label>
               <input
                 type="number"
-                id="number"
-                name="number"
+                id="balance"
+                name="balance"
                 value={number}
                 onChange={(e) => setNumber(parseInt(e.target.value))}
                 required

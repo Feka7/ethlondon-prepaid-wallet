@@ -7,14 +7,9 @@ datasource db {
   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
 }
 
-model User {
-  id            String    @id
-  name          String?
-  email         String?   @unique
-}
-
 model Prepaid {
   id            String    @id
-  email         String   @unique
+  email         String   
   address       String   @unique
+  balance       String
 }

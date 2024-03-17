@@ -36,6 +36,7 @@ export async function createPrepaidWallet() {
       address: result.data.wallets[0].address,
       email: result.data.wallets[0].email,
       id: result.data.wallets[0].id,
+      balance: "150"
     }
   })
 
