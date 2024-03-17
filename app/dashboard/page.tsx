@@ -1,11 +1,9 @@
-import { auth } from "@/auth";
 import Address from "@/components/Address";
 import ButtonLogoutDynamic from "@/components/ButtonLogoutDynamic";
 import ModalCreatePrepaid from "@/components/ModalCreatePrepaid";
 import Image from "next/image";
 
 export default async function Page() {
-  const session = await auth();
 
   return (
     <main className="px-8 md:px-24 py-12">
@@ -23,7 +21,7 @@ export default async function Page() {
             <div className="mx-auto">
               <Image src="/avatar.png" alt="Logo" width={120} height={120} />
             </div>
-            <div className="mt-4 font-bold text-3xl">{session?.user?.name}</div>
+            <div className="mt-4 font-bold text-3xl">{"test"}</div>
             <div className="mt-4">
               <Address />
             </div>

@@ -106,7 +106,7 @@ export default function Page() {
           </p>
           <p className="max-w-md font-semibold mt-4">
             Connect your wallet and create a prepaid wallet for anyone in
-            seconds. Just enter the recipient's email and the amount of USDC you
+            seconds. Just enter the recipient&apos;s email and the amount of USDC you
             wish to deposit.
           </p>
         </div>
