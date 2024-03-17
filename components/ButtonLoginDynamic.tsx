@@ -8,7 +8,7 @@ export default function ButtonLoginDynamic() {
   return (
     <DynamicWidget
       innerButtonComponent={
-        <button className="btn bg-red-500">Try app</button>
+        <button className="btn bg-red-500">Enter app</button>
       }
     />
   );

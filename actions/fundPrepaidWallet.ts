@@ -13,7 +13,7 @@ const schema = z.object({
   });
 
 const url = 'https://api.circle.com/v1/w3s/developer/transactions/contractExecution';
-export async function createPrepaidWallet(formData: FormData) {
+export async function fundPrepaidWallet(formData: FormData) {
     const formDataObj = Object.fromEntries(formData.entries());
     const validatedData = schema.parse(formDataObj);
     
@@ -37,7 +37,7 @@ export async function createPrepaidWallet(formData: FormData) {
 
       await resend.emails.send({
         from: 'onboarding@resend.dev',
-        to: "feka7@hotmail.it",
+        to: validatedData.email,
         subject: 'Flowise prepaid wallet',
         html: '<p>You have received a prepaid wallet with <strong>'+validatedData.number+' USDC</strong>!</p>'
       });

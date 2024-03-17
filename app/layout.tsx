@@ -4,6 +4,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Sulphur_Point } from "next/font/google";
 import ProviderWrapper from "../components/dynamic-wrapper";
+import { Toaster } from 'react-hot-toast';
 
 const inter = Sulphur_Point({ weight: "400", subsets: ["latin"] });
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <ProviderWrapper>
         <body className={inter.className}>
           <div className="w-full min-h-screen">
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           </div>
         </body>
       </ProviderWrapper>
+      <Toaster />
     </html>
   );
 }

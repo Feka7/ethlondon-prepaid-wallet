@@ -1,11 +1,8 @@
-import ClientExample from "@/components/client-example";
 import Image from "next/image";
-import { auth } from "@/auth";
-import { SessionProvider } from "next-auth/react";
 import ButtonLoginDynamic from "@/components/ButtonLoginDynamic";
 
-export default async function Page() {
-  const session = await auth();
+export default function Page() {
+  
   return (
     <main className="px-8 md:px-24 py-12">
       <div className="flex w-full items-center">
@@ -13,8 +10,8 @@ export default async function Page() {
           <Image src="/Logo.png" alt="Logo" width={80} height={80} />
         </div>
         <div className="space-x-10 items-center hidden md:flex">
-          <p className="font-bold">How it works</p>
-          <p className="font-bold">Why use Flowise</p>
+          <a href="#why" className="font-bold">Why use Flowise</a>
+          <a href="#how" className="font-bold">How it works</a>
           <ButtonLoginDynamic />
         </div>
       </div>
@@ -37,7 +34,7 @@ export default async function Page() {
       <div className="mt-12 flex place-content-center">
         <Image src="/globe.png" width={600} height={600} alt="globe" />
       </div>
-      <div className="mt-20 text-center">
+      <div className="mt-20 text-center" id="why">
         <p className="text-5xl font-bold">Why use Flowise</p>
       </div>
       <div className="divider divider-vertical max-w-4xl mx-auto"></div>
@@ -95,7 +92,7 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      <div className="text-center mt-36">
+      <div className="text-center mt-36" id="how">
         <p className="text-5xl font-bold">How it works</p>
       </div>
       <div className="divider divider-vertical max-w-4xl mx-auto"></div>
