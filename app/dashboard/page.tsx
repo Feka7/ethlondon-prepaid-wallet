@@ -43,7 +43,7 @@ export default async function Page() {
           <div className="px-8 mt-20 text-4xl font-semibold text-white">
             Your wallet balance is:
           </div>
-          <div className="flex-grow px-8 text-6xl mt-6 text-white">{new_balance}$ USDC</div>
+          <div className="flex-grow px-8 text-6xl mt-6 text-white">{new_balance.toFixed(2)}$ USDC</div>
           <div className="px-8 pt-20 pb-10">
             <ModalCreatePrepaid />
           </div>
@@ -73,7 +73,7 @@ export default async function Page() {
               <td><span className="font-bold text-xl">{item.email}</span>
                 <br></br>
                 <span className="text-gray-400">email</span></td>
-              <td><span className="font-bold text-xl">{item.balance}$ USDC</span>
+              <td><span className="font-bold text-xl">{item.balance}.00$ USDC</span>
                 <br></br>
                 <span className="text-gray-400">balance</span></td>
             </tr>)}

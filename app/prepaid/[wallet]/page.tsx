@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: { wallet: string } }) {
           <div className="px-8 mt-20 text-4xl font-semibold text-white">
             Prepaid wallet balance:
           </div>
-          <div className="flex-grow px-8 text-6xl mt-6 text-white">{wallet.balance}$ USDC</div>
+          <div className="flex-grow px-8 text-6xl mt-6 text-white">{wallet.balance}.00$ USDC</div>
           <div className="px-8 pt-20 pb-10">
             <ModalSendTransaction />
           </div>

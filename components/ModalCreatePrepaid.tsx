@@ -70,7 +70,7 @@ export default function ModalCreatePrepaid() {
   return (
     <>
       <button className="btn" onClick={() => ref?.current?.showModal()}>
-      Create prepaid card
+      Create prepaid wallet
       </button>
       <dialog ref={ref} className="modal">
         <div className="modal-box">
